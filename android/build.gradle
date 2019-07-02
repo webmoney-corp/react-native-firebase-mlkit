@@ -30,7 +30,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.google.firebase:firebase-core:+'
-    implementation 'com.google.firebase:firebase-ml-vision:+'
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.google.firebase:firebase-ml-vision:20.0.0'
     implementation 'com.facebook.react:react-native:+'
 }
