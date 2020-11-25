@@ -26,8 +26,8 @@ RCT_REMAP_METHOD(deviceTextRecognition, deviceTextRecognition:(NSString *)imageP
     }
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
-        [_bridge.imageLoader loadImageWithURLRequest:[RCTConvert NSURLRequest:imagePath] callback:^(NSError *error, UIImage *image) {
+
+        [[_bridge moduleForName:@"ImageLoader" lazilyLoadIfNecessary:YES] loadImageWithURLRequest:[RCTConvert NSURLRequest:imagePath] callback:^(NSError *error, UIImage *image) {
 
             if (error || image == nil) {
                 if ([imagePath hasPrefix:@"data:"] || [imagePath hasPrefix:@"file:"]) {
